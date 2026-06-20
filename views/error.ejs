@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+<div style="max-width: 500px; margin: 100px auto; text-align: center; padding: 32px; background-color: var(--bg-surface); border: 1px solid var(--border-color); border-top: 4px solid var(--prussian-blue);">
+  <h1 style="font-size: 4rem; color: var(--prussian-blue); line-height: 1;"><%= errorCode %></h1>
+  <h3 style="margin-top: 12px; margin-bottom: 16px;"><%= title %></h3>
+  <p style="color: var(--text-secondary); margin-bottom: 24px;"><%= errorMessage %></p>
+  <a href="/" class="btn-submit-post" style="display: inline-block; text-decoration: none;">Return to Dashboard</a>
+</div>
+
+<%- include('partials/footer') %>

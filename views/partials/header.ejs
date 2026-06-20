@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Scalar Facebook' %></title>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <% if (currentUser) { %>
+    <aside class="nav-sidebar">
+      <div class="sidebar-top">
+        <a href="/" class="logo">Scalar<span>Facebook</span></a>
+        
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item <%= typeof title !== 'undefined' && title.includes('Feed') ? 'active' : '' %>">
+            <a href="/">
+              <span>Feed</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= typeof title !== 'undefined' && title.includes('About') ? 'active' : '' %>">
+            <a href="/about">
+              <span>Details</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-bottom">
+        <span class="user-profile-badge">
+          <img class="avatar avatar-sm" src="<%= currentUser.avatar %>" alt="Avatar">
+          <span><%= currentUser.name.split(' ')[0] %></span>
+        </span>
+        <a href="/logout" class="btn-logout">Logout</a>
+      </div>
+    </aside>
+  <% } %>

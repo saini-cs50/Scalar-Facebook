@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<div class="main-wrapper" style="grid-template-columns: 240px 1fr; max-width: 1200px;">
+  
+    <nav>
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+          <a href="/">Dashboard Feed</a>
+        </li>
+        <li class="sidebar-nav-item active">
+          <a href="/about">Portal Details</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="feed-column">
+    <div class="card about-card">
+      <h2>Scalar Facebook System Overview</h2>
+      <p>
+        This portal operates as a social feed timeline. It provides authentication protection (using sessions and encrypted password hashing) to ensure all communications remain verified and authenticated.
+      </p>
+
+      <h3 style="margin-top: 16px;">System Configuration Specifications</h3>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 8px; text-align: left; font-size: 0.85rem;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--prussian-blue); color: var(--prussian-blue);">
+            <th style="padding: 10px 8px;">Parameter</th>
+            <th style="padding: 10px 8px;">Status / Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 10px 8px; font-weight: bold;">Server Engine</td>
+            <td style="padding: 10px 8px; color: var(--text-secondary);">Node.js / Express 4.x</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 10px 8px; font-weight: bold;">Session Handler</td>
+            <td style="padding: 10px 8px; color: var(--text-secondary);">express-session (in-memory cookie mapping)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 10px 8px; font-weight: bold;">Password Security</td>
+            <td style="padding: 10px 8px; color: var(--text-secondary);">BcryptJS (10 Salt Rounds)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 10px 8px; font-weight: bold;">Templating Renderer</td>
+            <td style="padding: 10px 8px; color: var(--text-secondary);">Embedded JavaScript (EJS)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 10px 8px; font-weight: bold;">Color Profile</td>
+            <td style="padding: 10px 8px; color: var(--text-secondary);">Prussian / Dusk Blues, Ink Black, Alabaster Grey</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 24px;">
+        <a href="/" class="btn-submit-post" style="display: inline-block; text-decoration: none;">Return to Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<%- include('partials/footer') %>

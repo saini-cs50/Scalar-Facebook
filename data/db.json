@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "user_admin",
+      "username": "alice_dev",
+      "name": "Alice Developer",
+      "password": "$2b$10$0jeHzhct0KElaaoNPBcFYuNvkQ8w8gEp0CdQgAMUtPOMkZ5ztFDoe",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=AD&backgroundType=solid&backgroundColor=1b263b"
+    },
+    {
+      "id": "user_learner",
+      "username": "guest_learner",
+      "name": "Guest Learner",
+      "password": "$2b$10$0jeHzhct0KElaaoNPBcFYu6bj5UduZdgA.KYpYhodwMfyQC.uCaaG",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=GL&backgroundType=solid&backgroundColor=415a77"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post_1",
+      "userId": "user_admin",
+      "content": "Welcome to Scalar Facebook! The database is initialized and active. Post updates or announcements here.",
+      "timestamp": "2026-06-20T16:07:30.279Z",
+      "likes": 3,
+      "comments": []
+    }
+  ]
+}

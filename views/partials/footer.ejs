@@ -1,0 +1,18 @@
+  <% if (currentUser) { %>
+ 
+    <nav class="mobile-nav">
+      <a href="/" class="mobile-nav-item <%= typeof title !== 'undefined' && title.includes('Feed') ? 'active' : '' %>">Feed</a>
+      <a href="/about" class="mobile-nav-item <%= typeof title !== 'undefined' && title.includes('About') ? 'active' : '' %>">Details</a>
+      <a href="/logout" class="mobile-nav-item">Logout</a>
+    </nav>
+  <% } %>
+
+  <footer style="margin-left: <%= currentUser ? '220px' : '0' %>; transition: margin-left 0.2s ease;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 32px 16px; border-top: 1px solid var(--border-color); margin-top: 64px;">
+      &copy; <%= new Date().getFullYear() %> Scalar Facebook. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

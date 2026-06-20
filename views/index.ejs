@@ -1,0 +1,119 @@
+<%- include('partials/header') %>
+
+<div class="main-wrapper">
+  
+  <main class="feed-column">
+    
+    <div class="stories-bar">
+      <div class="story-item">
+        <div class="story-avatar-container">
+          <img class="avatar avatar-md" src="<%= currentUser.avatar %>" alt="avatar">
+        </div>
+        <span class="story-name">Your Story</span>
+      </div>
+      
+      <div class="story-item">
+        <div class="story-avatar-container">
+          <img class="avatar avatar-md" src="https://api.dicebear.com/7.x/initials/svg?seed=AD&backgroundType=solid&backgroundColor=1b263b" alt="Alice">
+        </div>
+        <span class="story-name">alice_dev</span>
+      </div>
+
+      <div class="story-item">
+        <div class="story-avatar-container">
+          <img class="avatar avatar-md" src="https://api.dicebear.com/7.x/initials/svg?seed=GL&backgroundType=solid&backgroundColor=415a77" alt="Guest">
+        </div>
+        <span class="story-name">guest_learner</span>
+      </div>
+
+      <div class="story-item">
+        <div class="story-avatar-container">
+          <img class="avatar avatar-md" src="https://api.dicebear.com/7.x/initials/svg?seed=CD&backgroundType=solid&backgroundColor=778da9" alt="Charlie">
+        </div>
+        <span class="story-name">charlie_des</span>
+      </div>
+    </div>
+    <div class="creator-card">
+      <div class="creator-top">
+        <img class="avatar avatar-md" src="<%= currentUser.avatar %>" alt="avatar">
+        
+        <form action="/posts" method="POST">
+          <textarea 
+            name="content" 
+            class="creator-input" 
+            placeholder="What is on your mind?" 
+            required
+          ></textarea>
+          
+          <div class="creator-bottom">
+            <button type="submit" class="btn-submit-post">
+              Share
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <% if (posts.length === 0) { %>
+      <div class="card" style="text-align: center; padding: 40px; color: var(--text-secondary);">
+        <h3>No updates posted.</h3>
+      </div>
+    <% } else { %>
+      <% posts.forEach(post => { %>
+        <article class="post-card">
+          <div class="post-header">
+            <img class="avatar avatar-md" src="<%= post.user.avatar %>" alt="avatar">
+            <div class="post-author-info">
+              <div class="post-author-name"><%= post.user.name %></div>
+              <div class="post-meta">
+                <%= new Date(post.timestamp).toLocaleString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    }) %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="post-content"><%= post.content %></div>
+        </article>
+      <% }) %>
+    <% } %>
+
+  </main>
+
+  <aside class="sidebar-right">
+    <div class="suggestions-card">
+      <div class="suggestions-header">Active Directory</div>
+      <div class="contacts-list">
+        
+        <div class="contact-item">
+          <div class="contact-info">
+            <div class="avatar-container">
+              <img class="avatar avatar-sm" src="https://api.dicebear.com/7.x/initials/svg?seed=AD&backgroundType=solid&backgroundColor=1b263b" alt="Alice">
+              <div class="status-dot"></div>
+            </div>
+            <span class="contact-name">Alice Developer</span>
+          </div>
+          <span class="status-label">Online</span>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-info">
+            <div class="avatar-container">
+              <img class="avatar avatar-sm" src="https://api.dicebear.com/7.x/initials/svg?seed=GL&backgroundType=solid&backgroundColor=415a77" alt="Guest">
+              <div class="status-dot"></div>
+            </div>
+            <span class="contact-name">Guest Learner</span>
+          </div>
+          <span class="status-label">Online</span>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<%- include('partials/footer') %>
